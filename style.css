@@ -1,27 +1,70 @@
 @font-face {
     font-family: "Roboto";
-    src: url("fonts/Roboto-regular.woff2") format("woff2"),
-      url("fonts/Roboto-Regular.woff") format("woff");
+    src: url("fonts/Roboto-regular.woff2") format("woff2"), url("fonts/Roboto-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-  }
+}
 
-  *,
-  *::before,
-  *::after {
+html {
+    font-size: 12px;
+}
+
+*,
+*::before,
+*::after {
     box-sizing: inherit;
-  }
+}
 
-  a {
+a {
     color: inherit;
     text-decoration: none;
-  }
+}
 
-  img {
+img {
     max-width: 100%;
-  }
+}
 
-  body {
+body {
     font-family: Roboto, sans-serif;
-  }
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.clockbox {
+    margin: 50px auto;
+    width: 40rem;
+    height: 40rem;
+    border: 20px solid rgb(201, 63, 63);
+    border-radius: 50%;
+    padding: 2rem;
+}
+
+.clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px)
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background-color: black;
+    top: 50%;
+    transform-origin: 100%;
+    /* transform: rotate(90deg); */
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.minutes-hand {
+    width: 35%;
+}
+
+.hour-hand {
+    width: 25%;
+}
